@@ -25,5 +25,18 @@ public class MainJavaActivity extends AppCompatActivity {
 
         TextView message = findViewById(R.id.main_java_message);
         message.setText(text);
+
+        UserKotlin userKotlin = new UserKotlinBuilder()
+                .name("corrupt003_kotlin")
+                .age(50)
+                .build();
+
+        String kotlinText = String.format(
+                Locale.getDefault(),
+                "User name: %s, age: %d",
+                userKotlin.getName(), userKotlin.getAge());
+
+        TextView messageKotlin = findViewById(R.id.main_java_message_kotlin);
+        messageKotlin.setText(kotlinText);
     }
 }

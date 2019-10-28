@@ -16,6 +16,13 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val message = "User name: ${user.name}, age: ${user.age}"
-        main_message.text = message
+        main_message_user.text = message
+
+        val userKotlin = UserKotlinBuilder()
+            .name("corrupt003_kotlin")
+            .age(50)
+            .build()
+        val messageKotlin = "User Kotlin name: ${userKotlin.name}, age: ${userKotlin.age}"
+        main_message_user_kotlin.text = messageKotlin
     }
 }
