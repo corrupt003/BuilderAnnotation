@@ -75,10 +75,9 @@ class BuilderProcessorKotlin : AbstractProcessor() {
                     Diagnostic.Kind.ERROR,
                     "Failed to write file: $e"
                 )
-                return false
             }
         }
-        return true
+        return false
     }
 
     private fun getPackageName(typeElement: Element): String {

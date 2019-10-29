@@ -67,11 +67,10 @@ public class BuilderProcessor extends AbstractProcessor {
                         Diagnostic.Kind.ERROR,
                         "Failed to write file: " + e.toString()
                 );
-                return false;
             }
         }
 
-        return true;
+        return false;
     }
 
     private String getPackageName(Element typeElement) {
