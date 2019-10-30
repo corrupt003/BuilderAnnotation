@@ -49,7 +49,7 @@ class BuilderProcessorKotlin : AbstractProcessor() {
         for (element in annotatedElements) {
             val packageName = getPackageName(element)
             val typeName = element.simpleName.toString()
-            val vars = getNonPrivateProperties(element)
+            val vars = getAllProperties(element)
 
             if (vars.isEmpty()) {
                 processingEnv.messager.printMessage(
@@ -88,7 +88,7 @@ class BuilderProcessorKotlin : AbstractProcessor() {
             .toString()
     }
 
-    private fun getNonPrivateProperties(typeElement: Element): List<VariableElement> {
+    private fun getAllProperties(typeElement: Element): List<VariableElement> {
         val elements = ArrayList<VariableElement>()
 
         for (element in typeElement.enclosedElements) {
